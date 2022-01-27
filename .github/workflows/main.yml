@@ -21,7 +21,7 @@ jobs:
       # Run npm install to install project packages
       - run: npm install
       # yarn build to build the project
-      - run: npm run build
+      - run: npm run rollup
       # publish the files to NPM
       - run: npm publish --access public
       # for publishing, npm need authorization. We add the NPM token to the environment which will take care of authorization to publish to the package
