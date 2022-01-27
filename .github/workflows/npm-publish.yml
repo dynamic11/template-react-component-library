@@ -15,8 +15,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
-      - run: npm test
-      - run: npm run rollup
+      - run: npm install
+      - run: npm run test
       
 
   publish-npm:
@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - run: npm rollup
       - run: npm publish --public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
